@@ -1,7 +1,7 @@
 {
-  "name": "telegram-bot-peliculas-cristianas",
+  "name": "telegram-bot-search-on-telegram-channel",
   "version": "1.0.0",
-  "description": "Bot reads and analyce message sendding and return post's url of the Peliculas Cristianas Channel ",
+  "description": "Bot reads and analyce message sendding and return post's url of the channel",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

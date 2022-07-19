@@ -1,0 +1,19 @@
+{
+  "name": "telegram-bot-peliculas-cristianas",
+  "version": "1.0.0",
+  "description": "Bot reads and analyce message sendding and return post's url of the Peliculas Cristianas Channel ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "login": "node login.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santiago Galán <santiagogalan13@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@mtproto/core": "6.2.0",
+    "dotenv": "^16.0.1",
+    "node-telegram-bot-api": "^0.57.0",
+    "prompt": "^1.3.0"
+  }
+}

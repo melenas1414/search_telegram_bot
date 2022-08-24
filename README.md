@@ -10,3 +10,6 @@ You need connect a Telegram Account, for this, you need run:
 
 When you login, you can start services:
 - `npm start`
+
+All in one
+- `npm login && npm start`

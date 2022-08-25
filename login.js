@@ -1,3 +1,4 @@
+require('dotenv').config();
 const api = require("./api");
 const prompt = require('prompt');
 
@@ -18,6 +19,7 @@ async function getUser() {
   
       return user;
     } catch (error) {
+        console.log(error)
       return null;
     }
   }
@@ -123,20 +125,17 @@ function checkPassword({ srp_id, A, M1 }) {
 (async () => {
     const user = await getUser();
   
-  
     if (!user) {
         try {
            
-                var { phone_code_hash } = await sendCode(phone);
-                prompt.start();
-                let result = await prompt.get(['recibe']);
-                console.log(result);
+            var { phone_code_hash } = await sendCode(phone);
+            prompt.start();
+            let result = await prompt.get(['recibe']);
             while (result.recibe !=='si'){
                 // awwait input code
                
                 await resendCode(phone, phone_code_hash);
                 recibe = await prompt.get(['recibe']);
-                console.log(recibe);
                
             } 
             

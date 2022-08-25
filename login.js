@@ -130,12 +130,12 @@ function checkPassword({ srp_id, A, M1 }) {
            
             var { phone_code_hash } = await sendCode(phone);
             prompt.start();
-            let result = await prompt.get(['recibe']);
-            while (result.recibe !=='si'){
+            let result = await prompt.get(['Resend? Y/N']);
+            while (result["Resend? Y/N"] ==='Y'){
                 // awwait input code
                
                 await resendCode(phone, phone_code_hash);
-                recibe = await prompt.get(['recibe']);
+                recibe = await prompt.get(['Resend? Y/N']);
                
             } 
             
@@ -177,6 +177,9 @@ function checkPassword({ srp_id, A, M1 }) {
             });
     
             const checkPasswordResult = await checkPassword({ srp_id, A, M1 });
+            return true;
         }
+        
     }
+    return true;
 })();

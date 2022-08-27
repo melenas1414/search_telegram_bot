@@ -25,7 +25,7 @@ try {
   let searching = await bot.sendMessage(chatId, `Buscando resultados para "${searchInfo}"`);
   let result = await search.search(searchInfo);
   bot.deleteMessage(chatId, searching.message_id);
-  if (msg.chat.type==="group") {
+  if (msg.chat.type === 'group' ||  msg.chat.type === 'supergroup') {
     bot.sendMessage(chatId, `Te he enviado la búsqueda directamente`, {
       reply_markup: {
         inline_keyboard: [

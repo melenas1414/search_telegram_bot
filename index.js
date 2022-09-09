@@ -48,7 +48,7 @@ try {
     var count = 0;
     let url = await search.getUrl(message);
     if( url === undefined ) return;
-    if(!message.media.photo) {
+    if(!message.media) {
       message.message.replace(/[Streaming]*g\n[https:\/\/t.me\/peliculascristianasstreaming\/]*[\d]*/, '');
       await bot.sendMessage(chatId, `${message.message}`, {
         reply_markup: {

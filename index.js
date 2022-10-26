@@ -83,6 +83,21 @@ try {
 }
 });
 
+bot.onText(/\/[Pp]etici[oó]n (.+)/, async (msg, match) => {
+  if (msg.chat.type !== "private") {
+    return;
+  }
+  await bot.sendMessage(msg.chat.id, `Se ha enviado tu consulta a los administradores`);
+  await bot.sendMessage(
+    process.env.ADMIN,
+    `Se ha recibido una petición de @${msg.chat.username} con el siguiente texto: ${match[1]}`
+  );
+});
+
+// Other text 
+bot.onText(/\/help/, async (msg) => {
+  await bot.sendMessage(msg.chat.id, `Si deseas hacer una petición usa el comando /peticion {mensaje}, si deseas buscar una película usa el comando /buscar {nombre}`);
+});
 
 function sendStartSessionWithBot(groupID) {
   bot.sendMessage({

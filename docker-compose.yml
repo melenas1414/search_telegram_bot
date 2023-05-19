@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node:
+    build: .
+    ports: []
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./.env:/app/.env
